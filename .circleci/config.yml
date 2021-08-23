@@ -31,4 +31,4 @@ workflows:
     jobs:
       - trading-team-orb/build:
         solution_path: Marlin.BetPlacement.Host/Marlin.BetPlacement.Host.csproj
-        - build-and-test
+        build-and-test
