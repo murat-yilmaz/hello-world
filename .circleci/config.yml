@@ -35,8 +35,8 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              BERET = "VARIII"
-              echo $BERET
+              echo 'export MY_ENV_VAR="FOO"'              
+              echo ${MY_ENV_VAR}
       
 workflows:
   # Below is the definition of your workflow.
