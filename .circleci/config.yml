@@ -35,7 +35,7 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              echo 'VARI="FOO"'              
+              VARI="FOO"              
               echo ${VARI}
               echo $VARI
       
