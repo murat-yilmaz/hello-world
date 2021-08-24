@@ -32,11 +32,10 @@ jobs:
           #condition:
            #  equal: [ bra , (<< pipeline.git.branch >>  | cut -d 'n' -f 1)]
       #    steps:
-      - run: 
-        command: |
-          VARI =  << pipeline.git.branch >>  | cut -d 'n' -f 1
-          echo "Now run the feature"
-          echo "$VARI"
+      - run: VARI =  << pipeline.git.branch >>  | cut -d 'n' -f 1
+          #echo "Now run the feature"
+      - run: echo "$VARI"
+      
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
