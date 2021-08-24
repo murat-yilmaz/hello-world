@@ -27,6 +27,7 @@ jobs:
              equal: [ main, << pipeline.git.branch >> ]
           steps:
             - run: echo "Maine geldik"
+      - run: echo << pipeline.git.branch >>  | cut -d 'n' -f 1            
 
 workflows:
   # Below is the definition of your workflow.
