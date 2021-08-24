@@ -34,9 +34,10 @@ jobs:
       #    steps:
       - run: 
         name: Set VARI
-        command: VARI =  << pipeline.git.branch >>  | cut -d 'n' -f 1
-          #echo "Now run the feature"
-          echo $VARI
+        command: |
+            VARI =  << pipeline.git.branch >>  | cut -d 'n' -f 1
+            #echo "Now run the feature"
+            echo $VARI
       
 workflows:
   # Below is the definition of your workflow.
