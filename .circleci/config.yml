@@ -20,8 +20,13 @@ jobs:
           name: Run tests
           command: |
             dotnet test            
-      - run: echo "hello world"
+      - run: echo "hello worl"
       - run: echo ${CIRCLE_BRANCH}
+      - when:
+          condition:
+             equal: [ main, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "Maine geldidk"
 
 workflows:
   # Below is the definition of your workflow.
