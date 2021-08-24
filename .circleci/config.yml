@@ -20,7 +20,7 @@ jobs:
           name: Run tests
           command: |
             dotnet test            
-      - run: echo "hello world"
+      - run: echo "hello worl"
       - run: echo ${CIRCLE_BRANCH}
 
 workflows:
