@@ -35,7 +35,7 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              echo 'export VARI="FOO"'              
+              echo 'VARI="FOO"'              
               echo ${VARI}
               echo $VARI
       
