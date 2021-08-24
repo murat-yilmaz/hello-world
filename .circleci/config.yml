@@ -19,8 +19,8 @@ jobs:
           solution_path: ConsoleApp1/ConsoleApp1.csproj
           name: Run tests
           command: |
-            dotnet test
-            
+            - dotnet test
+            - run: echo "hello world" # run the `echo` command
 
 workflows:
   # Below is the definition of your workflow.
@@ -29,5 +29,4 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   sample: 
     jobs:
-      #- build-and-test
-      - run: echo "hello world" # run the `echo` command
+      - build-and-test      
