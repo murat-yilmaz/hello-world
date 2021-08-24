@@ -19,8 +19,7 @@ jobs:
           solution_path: ConsoleApp1/ConsoleApp1.csproj
           name: Run tests
           command: |
-            dotnet test
-            run: echo "hello world" # run the `echo` command
+            dotnet test            
 
 workflows:
   # Below is the definition of your workflow.
