@@ -14,12 +14,12 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Then simply use the dotnet container as you'd expect and run your tests
-      - run:
+      #- run:
           # Update this line with the directory that contains your tests project file
-          solution_path: ConsoleApp1/ConsoleApp1.csproj
-          name: Run tests
-          command: |
-            dotnet test            
+       #   solution_path: ConsoleApp1/ConsoleApp1.csproj
+        #  name: Run tests
+         # command: |
+          #  dotnet test            
     - run: echo "hello world" # run the `echo` command
     
 workflows:
