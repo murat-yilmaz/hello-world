@@ -37,6 +37,7 @@ jobs:
           command: |
               echo 'export VARI="FOO"'              
               echo ${VARI}
+              echo $VARI
       
 workflows:
   # Below is the definition of your workflow.
