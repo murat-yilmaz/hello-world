@@ -20,7 +20,7 @@ jobs:
         #  name: Run tests
          # command: |
           #  dotnet test            
-    - run: echo "hello worl3d" # run the `echo` command
+    - run: Write-Host 'Hello, Windows'
     
 workflows:
   # Below is the definition of your workflow.
