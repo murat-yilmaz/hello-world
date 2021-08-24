@@ -30,4 +30,4 @@ workflows:
   sample: 
     jobs:
       #- build-and-test
-      echo 'Murat'
+      run: Write-Host 'Hello, Windows'
