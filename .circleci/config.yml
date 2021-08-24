@@ -35,8 +35,8 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              VARI = "VARIII"
-              echo $VARI
+              BERET = "VARIII"
+              echo $BERET
       
 workflows:
   # Below is the definition of your workflow.
