@@ -28,13 +28,13 @@ jobs:
           steps:
             - run: echo "Maine geldik"
       - run: echo << pipeline.git.branch >>  | cut -d 'n' -f 1            
-      - when:
+      #- when:
           #condition:
            #  equal: [ bra , (<< pipeline.git.branch >>  | cut -d 'n' -f 1)]
-          steps:
-            - run: $VARI =  (<< pipeline.git.branch >>  | cut -d 'n' -f 1)
-            - run: echo "Now run the feature"
-            - run: echo $VARI
+      #    steps:
+      - run: $VARI =  (<< pipeline.git.branch >>  | cut -d 'n' -f 1)
+      - run: echo "Now run the feature"
+      - run: echo $VARI
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
