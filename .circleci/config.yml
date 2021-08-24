@@ -21,7 +21,7 @@ jobs:
           command: |
             dotnet test            
       - run: echo "hello world"
-      - run: echo CIRCLE_BRANCH
+      - run: echo ${CIRCLE_BRANCH}
 
 workflows:
   # Below is the definition of your workflow.
