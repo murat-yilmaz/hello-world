@@ -20,7 +20,8 @@ jobs:
           name: Run tests
           command: |
             dotnet test            
-
+    - run: echo "hello world" # run the `echo` command
+    
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
