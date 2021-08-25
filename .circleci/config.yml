@@ -10,6 +10,10 @@ jobs:
     # Be sure to update the tag on this image to a more stable version, using latest can result in unstable builds.
     docker:
       - image:  mcr.microsoft.com/dotnet/core/sdk:3.1-focal    
+    filters:
+      branches:
+        only: 
+          - branch2      
     steps:
       # Checkout the code as the first step.
       - checkout
@@ -38,10 +42,6 @@ jobs:
       #        VARI = "FOO"      
       #        echo ${VARI}
       #        echo $VARI
-    filters:
-      branches:
-        only: 
-          - branch2  
       
 workflows:
   # Below is the definition of your workflow.
