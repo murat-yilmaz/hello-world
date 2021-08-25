@@ -35,12 +35,14 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              VARI = << pipeline.git.branch >>
-              #| cut -d 'n' -f 1
-              # "FOO"      
+              VARI = "FOO"      
               echo ${VARI}
               echo $VARI
-      
+      - run: echo "Fiçır"
+          filters:
+            branches:
+              only:
+                  - /feature-.*/
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
