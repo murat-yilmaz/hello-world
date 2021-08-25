@@ -9,7 +9,7 @@ jobs:
     # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # Be sure to update the tag on this image to a more stable version, using latest can result in unstable builds.
     docker:
-      - image:  mcr.microsoft.com/dotnet/core/sdk:3.1-focal
+      - image:  mcr.microsoft.com/dotnet/core/sdk:3.1-focal           
     steps:
       # Checkout the code as the first step.
       - checkout
@@ -21,12 +21,23 @@ jobs:
           command: |
             dotnet test            
       - run: echo "hello worl"
-      - run: echo ${CIRCLE_BRANCH}
-      - when:
-          condition:
-             equal: [ main, << pipeline.git.branch >> ]
-          steps:
-            - run: echo "Maine geldidk"
+      #- run: echo ${CIRCLE_BRANCH}
+      #- when:
+      #    condition:
+      #       equal: [ main, << pipeline.git.branch >> ]
+      #    steps:
+      #      - run: echo "Maine geldik"
+      #- run: echo << pipeline.git.branch >>  | cut -d 'n' -f 1            
+      #- when:
+          #condition:
+           #  equal: [ bra , (<< pipeline.git.branch >>  | cut -d 'n' -f 1)]
+      #    steps:
+      #- run: 
+      #    name: "Set VARI"
+      #    command: |
+      #        VARI = "FOO"      
+      #        echo ${VARI}
+      #        echo $VARI     
 
 workflows:
   # Below is the definition of your workflow.
@@ -35,4 +46,8 @@ workflows:
   # For more details on extending your workflow, see the configuration docs: https://circleci.com/docs/2.0/configuration-reference/#workflows
   sample: 
     jobs:
-      - build-and-test      
+      - build-and-test:
+        filters:
+          branches:
+            only: 
+              - /bran.*/   
