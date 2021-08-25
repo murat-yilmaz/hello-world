@@ -38,7 +38,11 @@ jobs:
       #        VARI = "FOO"      
       #        echo ${VARI}
       #        echo $VARI
-      
+    filters:
+      branches:
+        only: 
+          - branc2     
+
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -47,7 +51,3 @@ workflows:
   sample: 
     jobs:
       - build-and-test   
-        filters:
-          branches:
-            only: 
-              - branc2     
