@@ -21,28 +21,24 @@ jobs:
           command: |
             dotnet test            
       - run: echo "hello worl"
-      - run: echo ${CIRCLE_BRANCH}
-      - when:
-          condition:
-             equal: [ main, << pipeline.git.branch >> ]
-          steps:
-            - run: echo "Maine geldik"
-      - run: echo << pipeline.git.branch >>  | cut -d 'n' -f 1            
+      #- run: echo ${CIRCLE_BRANCH}
+      #- when:
+      #    condition:
+      #       equal: [ main, << pipeline.git.branch >> ]
+      #    steps:
+      #      - run: echo "Maine geldik"
+      #- run: echo << pipeline.git.branch >>  | cut -d 'n' -f 1            
       #- when:
           #condition:
            #  equal: [ bra , (<< pipeline.git.branch >>  | cut -d 'n' -f 1)]
       #    steps:
-      - run: 
-          name: "Set VARI"
-          command: |
-              VARI = "FOO"      
-              echo ${VARI}
-              echo $VARI
-      - run: echo "Fiçır"
-          filters:
-            branches:
-              only:
-                  - /feature-.*/
+      #- run: 
+      #    name: "Set VARI"
+      #    command: |
+      #        VARI = "FOO"      
+      #        echo ${VARI}
+      #        echo $VARI
+      
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -51,3 +47,7 @@ workflows:
   sample: 
     jobs:
       - build-and-test      
+      filters:
+            branches:
+              only:
+                  - /feature-.*/
