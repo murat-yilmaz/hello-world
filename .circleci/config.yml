@@ -47,7 +47,7 @@ workflows:
   sample: 
     jobs:
       - build-and-test   
-          filters:
-            branches:
-              only: 
-                - branch2     
+        filters:
+          branches:
+            only: 
+              - branc2     
