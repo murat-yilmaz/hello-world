@@ -12,7 +12,8 @@ jobs:
       - image:  mcr.microsoft.com/dotnet/core/sdk:3.1-focal
     filters:
       branches:
-      only: - /feature-.*/      
+        only: 
+          -bran.*/      
     steps:
       # Checkout the code as the first step.
       - checkout
