@@ -38,7 +38,22 @@ jobs:
       #        VARI = "FOO"      
       #        echo ${VARI}
       #        echo $VARI     
-
+  
+  build-and-test2:  
+    docker:
+      - image:  mcr.microsoft.com/dotnet/core/sdk:3.1-focal           
+    steps:
+      # Checkout the code as the first step.
+      - checkout
+      # Then simply use the dotnet container as you'd expect and run your tests
+      - run:
+          # Update this line with the directory that contains your tests project file
+          solution_path: ConsoleApp1/ConsoleApp1.csproj
+          name: Run tests
+          command: |
+            dotnet test            
+      - run: echo "hello worl2"
+    
 workflows:
   # Below is the definition of your workflow.
   # Inside the workflow, you provide the jobs you want to run, e.g this workflow runs the build-and-test job above.
@@ -47,7 +62,8 @@ workflows:
   sample: 
     jobs:
       - build-and-test:
-        filters:
-          branches:
-            only: 
-              - /bran.*/   
+          filters:
+            branches:
+              only: 
+                - /bran.*/   
+      - build-and-test2
