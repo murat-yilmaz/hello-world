@@ -35,8 +35,7 @@ jobs:
       - run: 
           name: "Set VARI"
           command: |
-              VARI="FOO"              
-              echo ${VARI}
+              VARI=<< pipeline.git.branch >>  | cut -d 'n' -f 1 # "FOO"              
               echo $VARI
       
 workflows:
